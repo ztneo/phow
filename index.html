@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c24">
+<meta name="description" content="NEON SPACE — ranglar, yulduzlar va tasavvur uchrashadigan interaktiv kosmik makon.">
+<title>NEON SPACE — O‘z orbitangni yarat</title>
+<style>
+:root{color-scheme:dark;--bg:#080c24;--panel:#10152f;--text:#f3f2ff;--muted:#b4b7d2;--pink:#fa72c6;--purple:#9575ff;--blue:#6cd5ff;--line:rgba(184,175,255,.18);--planet-hue:0deg}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}button,a,input{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button,a{touch-action:manipulation}a{color:inherit;text-decoration:none}button{cursor:pointer}button:disabled{cursor:default}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:6px}::selection{background:#a575ff;color:#080c24}.skip{position:absolute;left:20px;top:-100px;background:#fff;color:#000;padding:12px;z-index:20}.skip:focus{top:15px}.container{width:min(1160px,calc(100% - 48px));margin:auto}#stars{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}header,main,footer{position:relative;z-index:1}header{border-bottom:1px solid var(--line)}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:850;letter-spacing:2px}.brand-icon{display:grid;place-items:center;width:36px;height:36px;border:1px solid #9675ff;border-radius:11px;background:#211b46;color:#f493dc;font-size:24px;transform:rotate(-10deg)}nav{display:flex;align-items:center;gap:30px;font-size:13px;color:var(--muted)}nav a:hover{color:white}.nav-link{border:1px solid var(--line);padding:10px 17px;border-radius:30px;color:var(--text)}.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--pink)}.hero{min-height:680px;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:20px;padding-top:54px;padding-bottom:60px}.badge{display:inline-flex;gap:10px;align-items:center;padding:7px 13px;border:1px solid var(--line);border-radius:30px;color:#d0c5f3;background:#15152f;font-size:10px;letter-spacing:2px}.dot{width:6px;height:6px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink)}h1{font-size:clamp(48px,6.7vw,86px);letter-spacing:-5px;line-height:1.06;font-weight:800;margin:26px 0}h1 span{display:block;background:linear-gradient(110deg,#b29bff 8%,#e586e5 56%,#ff91bd);background-clip:text;-webkit-background-clip:text;color:transparent}.intro{max-width:410px;font-size:15px;color:var(--muted);line-height:1.9}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{border:1px solid var(--line);background:#13172f;color:var(--text);border-radius:12px;padding:13px 20px;font-size:13px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:16px;transition:transform .2s,background .2s}.button:hover{transform:translateY(-3px);background:#23203f}.primary{background:linear-gradient(105deg,#b495ff,#fa9acb);border:0;color:#141027;box-shadow:0 8px 35px #bb72ed26}.primary:hover{background:linear-gradient(105deg,#c6afff,#ffb4db)}.small-note{font-size:10px;letter-spacing:1.5px;color:#aaaaca;margin-top:30px}.small-note span{color:var(--blue);margin-right:8px}.scene{position:relative;min-width:0;aspect-ratio:1;display:grid;place-items:center;isolation:isolate}.scene:before{content:"";position:absolute;inset:4%;background:radial-gradient(ellipse,#6935b849,transparent 68%);z-index:-1}.orbit{position:absolute;width:96%;height:65%;border:1px solid #9186cc28;border-radius:50%;transform:rotate(-30deg);pointer-events:none}.orbit.two{width:87%;height:87%;transform:rotate(25deg);border-style:dashed;border-color:#9186cc20}.orbit.three{width:112%;height:43%;transform:rotate(-30deg)}.moon{position:absolute;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#aef2ff,#5564d1 55%,#1c1d58);top:23%;right:9%;box-shadow:0 0 28px #6dafff44}.moon.other{width:10px;height:10px;top:78%;right:82%;background:var(--pink)}.planet-button{border:0;padding:0;width:65%;aspect-ratio:1;position:relative;background:transparent;border-radius:50%;animation:float 7s ease-in-out infinite;filter:hue-rotate(var(--planet-hue));transition:filter .65s}.planet{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 28% 22%,#ffffff80,transparent 30%),repeating-linear-gradient(160deg,transparent 0 20px,#37216528 25px 34px,transparent 42px 58px),linear-gradient(140deg,#89aaff 0%,#9c7ff9 25%,#cf78d8 43%,#ac5ab1 56%,#5c327d 70%,#18142c 93%);box-shadow:inset -25px -20px 45px #05071ecc,inset 4px 5px 20px #d5b6ff44,0 0 55px #8f4fe430}.planet:after{content:"";position:absolute;inset:-18% -36%;border:22px solid #cb93f075;border-top-color:#bf8fef25;border-left-color:#c98be74d;border-radius:50%;transform:rotate(-28deg) scaleY(.31);box-shadow:0 0 0 3px #a678cb44,0 0 0 10px #c996e71c,0 0 0 13px #ad7bed29;pointer-events:none}.planet-button:hover{filter:hue-rotate(var(--planet-hue)) brightness(1.12)}.scene-label{position:absolute;bottom:0;left:50%;transform:translateX(-50%);white-space:nowrap;font:10px ui-monospace,monospace;color:#b1a7cf;letter-spacing:2px}.floating-tag{position:absolute;right:-1%;bottom:21%;border:1px solid var(--line);background:#12172ce8;border-radius:13px;padding:10px 15px;font-size:10px;color:#c7badf;box-shadow:0 10px 35px #0002}.floating-tag strong{display:block;font-size:12px;color:var(--text);margin-top:3px}.coordinates{position:absolute;left:0;top:15%;font:10px ui-monospace,monospace;color:#a9a2c1;line-height:1.9}.strip{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;font-size:10px;letter-spacing:2px;color:#c2b9d9}.strip span::before{content:"✦";color:var(--pink);margin-right:12px}section{padding:85px 0}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:30px}h2{font-size:clamp(29px,4vw,42px);letter-spacing:-1.6px;line-height:1.2;margin:10px 0 0}.section-heading p{font-size:13px;color:var(--muted);max-width:290px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#171a37dc,#0e1229ed);border:1px solid var(--line);border-radius:20px;padding:25px;overflow:hidden;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-5px);border-color:#b386ff66}.card-art{height:135px;display:grid;place-items:center;position:relative;margin-bottom:18px;border-radius:13px;background:radial-gradient(ellipse,#8c46c326,transparent 70%)}.mini-orb{width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 28% 25%,#fac4ec,#b367da 40%,#311e62 75%);box-shadow:0 0 35px #a851c52c}.portal{width:91px;height:91px;border:10px solid #ac8cff;border-radius:50%;transform:rotate(-30deg) scaleX(.65);box-shadow:0 0 24px #ac6aff,inset 0 0 24px #ac6aff}.wave{display:flex;align-items:center;gap:7px;height:95px}.wave i{width:6px;border-radius:8px;background:linear-gradient(#9ee0ff,#9784ff,#f080d0);height:var(--height);animation:pulse 2.4s ease-in-out infinite;animation-delay:var(--delay)}.card-number{font:10px ui-monospace,monospace;letter-spacing:2px;color:#b4a3d6}.card h3{font-size:19px;margin:9px 0}.card p{color:var(--muted);font-size:13px;margin:0}.lab{border:1px solid #a577e53b;border-radius:24px;background:radial-gradient(ellipse at 100% 0,#793d9d33,transparent 65%),#11162e;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:50px}.lab p{color:var(--muted);font-size:14px;max-width:390px}.controls{display:flex;flex-direction:column;justify-content:center;gap:22px}.control-title{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#d2cce4;margin-bottom:12px}.swatches{display:flex;gap:12px}.swatch{width:44px;height:44px;border-radius:50%;border:3px solid transparent;background:var(--swatch);box-shadow:inset 0 0 0 4px #11162e}.swatch[aria-pressed="true"]{border-color:#fff}.slider{width:100%;accent-color:#c08bff;cursor:pointer}.control-actions{display:flex;gap:10px;flex-wrap:wrap}.status{font-size:12px;color:var(--blue);min-height:20px;margin:0!important}footer{padding:28px 0;border-top:1px solid var(--line)}.footer-content{display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}.footer-content .brand{font-size:11px;letter-spacing:1px}.footer-content a:hover{color:white}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}@keyframes pulse{0%,100%{transform:scaleY(.65)}50%{transform:scaleY(1)}}body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}body.paused{scroll-behavior:auto}html:has(body.paused){scroll-behavior:auto}
+@media(min-width:1400px){.hero{min-height:750px}}@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:50px;gap:10px}.hero-copy{max-width:560px}h1{letter-spacing:-3px}.scene{width:min(460px,92%);margin:auto}.cards{grid-template-columns:1fr}.card{display:grid;grid-template-columns:115px 1fr;gap:20px;align-items:center}.card-art{height:130px;margin:0}.lab{grid-template-columns:1fr;gap:20px}.section-heading{align-items:flex-start;flex-direction:column;gap:16px}.strip{flex-wrap:wrap;justify-content:center}.section-heading p{max-width:440px}section{padding:55px 0}nav{gap:16px}.footer-content{flex-wrap:wrap}}@media(max-width:480px){.container{width:calc(100% - 32px)}.nav{height:76px}.brand{font-size:12px;letter-spacing:1px}nav .desktop-link{display:none}.nav-link{padding:8px 12px;font-size:11px}h1{font-size:54px}.intro{font-size:14px}.hero{padding-bottom:40px}.scene{margin-top:22px}.coordinates{font-size:8px}.floating-tag{right:-3%;font-size:9px}.scene-label{font-size:8px;letter-spacing:1px}.card{padding:19px;grid-template-columns:80px 1fr;gap:15px}.mini-orb{width:60px;height:60px}.portal{width:70px;height:70px}.wave{gap:4px}.wave i{width:5px}.lab{padding:24px}.strip{font-size:9px;letter-spacing:1px}.button{padding:12px 15px}.footer-content{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Asosiy qismga o‘tish</a>
+<canvas id="stars" aria-hidden="true"></canvas>
+<header><div class="container nav"><a class="brand" href="#main" aria-label="Neon Space bosh sahifa"><span class="brand-icon" aria-hidden="true">✦</span> NEON SPACE</a><nav aria-label="Asosiy navigatsiya"><a class="desktop-link" href="#discover">Kashf et</a><a class="nav-link" href="#lab">O‘z olamingni yarat ↗</a></nav></div></header>
+<main id="main" class="container">
+<div class="hero">
+<div class="hero-copy"><div class="badge"><span class="dot" aria-hidden="true"></span> TASAVVUR UCHUN CHEGARA YO‘Q</div><h1>Oddiylikdan<br>tashqariga.<span>O‘z orbitangga.</span></h1><p class="intro">Bir oz kosmos. Bir oz neon. Juda ko‘p tasavvur. Bu yerda olam sen tanlagan ranglarda porlaydi.</p><div class="actions"><a class="button primary" href="#lab">Sayohatni boshlash <span aria-hidden="true">↗</span></a><a class="button" href="#discover">Kosmosni kashf et <span aria-hidden="true">↓</span></a></div><p class="small-note"><span aria-hidden="true">✧</span> SICHQONCHA BILAN EMAS, TASAVVUR BILAN UCH</p></div>
+<div class="scene"><div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div><div class="coordinates" aria-hidden="true">SECTOR / N–01<br>NEON GALAXY</div><span class="moon" aria-hidden="true"></span><span class="moon other" aria-hidden="true"></span><button class="planet-button" id="planet" type="button" aria-label="Sayyora rangini o‘zgartirish" aria-describedby="planet-hint"><span class="planet" aria-hidden="true"></span></button><div class="floating-tag">SENING KICHIK KOINOTING<strong id="planet-name">01 — Pushti tuman</strong></div><p class="scene-label" id="planet-hint">SAYYORANI BOS · RANGLARNI ALMASHTIR</p></div>
+</div>
+<div class="strip" aria-label="Sayt mavzulari"><span>CHEKSIZ TASAVVUR</span><span>SENING RANGLARING</span><span>YANGI O‘LCHAM</span><span>FAQAT YAXSHI KAYFIYAT</span></div>
+<section id="discover" aria-labelledby="discover-title"><div class="section-heading"><div><div class="eyebrow">01 / KASHFIYOT</div><h2>Har burchakda boshqa olam.</h2></div><p>Shoshilma. Bu kichik raqamli galaktikaning har bir detali sen uchun.</p></div><div class="cards"><article class="card"><div class="card-art" aria-hidden="true"><div class="mini-orb"></div></div><div><span class="card-number">OLAM / 001</span><h3>Pushti tuman</h3><p>Yumshoq ranglar, uzoq sayyoralar va sokin kosmik kayfiyat.</p></div></article><article class="card"><div class="card-art" aria-hidden="true"><div class="portal"></div></div><div><span class="card-number">OLAM / 002</span><h3>Binafsha portal</h3><p>Oddiy dunyodan chiqib, tasavvuringning yangi tomonini och.</p></div></article><article class="card"><div class="card-art" aria-hidden="true"><div class="wave"><i style="--height:22px;--delay:0s"></i><i style="--height:44px;--delay:.2s"></i><i style="--height:65px;--delay:.4s"></i><i style="--height:88px;--delay:.6s"></i><i style="--height:56px;--delay:.8s"></i><i style="--height:73px;--delay:1s"></i><i style="--height:35px;--delay:1.2s"></i></div></div><div><span class="card-number">OLAM / 003</span><h3>Neon ritm</h3><p>Rang va harakatning ovozsiz raqsi. O‘z ritmingni top.</p></div></article></div></section>
+<section id="lab" aria-labelledby="lab-title"><div class="lab"><div><div class="eyebrow">02 / KOSMIK LABORATORIYA</div><h2 id="lab-title">Bu olamning<br>muallifi — sen.</h2><p>Sayyorang rangini tanla, yulduzlarni ko‘paytir yoki barcha harakatlarni to‘xtat. Koinotni kayfiyatingga mosla.</p><a class="button" href="#main">Sayyoraga qaytish ↑</a></div><div class="controls"><div><div class="control-title"><span>Sayyora palitrasi</span><span id="palette-name">Pushti tuman</span></div><div class="swatches" role="group" aria-label="Sayyora rangini tanlash"><button class="swatch" type="button" data-palette="0" style="--swatch:linear-gradient(135deg,#b9a1ff,#fb88cd)" aria-label="Pushti tuman" aria-pressed="true"></button><button class="swatch" type="button" data-palette="1" style="--swatch:linear-gradient(135deg,#789aff,#68ece0)" aria-label="Moviy orbit" aria-pressed="false"></button><button class="swatch" type="button" data-palette="2" style="--swatch:linear-gradient(135deg,#f8939a,#fbc382)" aria-label="Quyosh shafag‘i" aria-pressed="false"></button></div></div><div><label class="control-title" for="density"><span>Yulduzlar soni</span><output id="density-value" for="density">100</output></label><input class="slider" id="density" type="range" min="20" max="180" step="10" value="100"></div><div class="control-actions"><button class="button" id="pause" type="button" aria-pressed="false">Harakatni to‘xtatish</button><button class="button" id="random" type="button">Tasodifiy olam ✦</button></div><p class="status" id="status" role="status" aria-live="polite">Olaming o‘zgarishga tayyor.</p></div></div></section>
+<noscript><p>Interaktiv sozlamalar uchun brauzeringizda JavaScript’ni yoqing. Saytning asosiy qismini hozir ham ko‘rishingiz mumkin.</p></noscript>
+</main>
+<footer><div class="container footer-content"><a class="brand" href="#main">✦ NEON SPACE</a><span>ztneo uchun yaratilgan kichik koinot.</span><a href="https://github.com/ztneo/phow">GitHub ↗</a></div></footer>
+<script>
+'use strict';
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const palettes = [
+    {name:'Pushti tuman',hue:0},
+    {name:'Moviy orbit',hue:280},
+    {name:'Quyosh shafag‘i',hue:70}
+  ];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let selected = 0;
+  let paused = reduced.matches;
+  let starCount = 100;
+  const swatches = Array.from(document.querySelectorAll('[data-palette]'));
+  function setPalette(index) {
+    if (!Number.isInteger(index) || index < 0 || index >= palettes.length) return;
+    selected = index;
+    const palette = palettes[index];
+    document.documentElement.style.setProperty('--planet-hue', palette.hue + 'deg');
+    $('palette-name').textContent = palette.name;
+    $('planet-name').textContent = '0' + (index + 1) + ' — ' + palette.name;
+    swatches.forEach((button,i) => button.setAttribute('aria-pressed', String(i === index)));
+    $('status').textContent = palette.name + ' tanlandi.';
+  }
+  swatches.forEach(button => button.addEventListener('click', () => setPalette(Number(button.dataset.palette))));
+  $('planet').addEventListener('click', () => setPalette((selected + 1) % palettes.length));
+  const canvas = $('stars');
+  let ctx = null;
+  try { ctx = canvas.getContext('2d'); } catch (_) { /* CSS artwork remains usable without canvas. */ }
+  let width = 0, height = 0, stars = [], frame = 0, lastTime = 0;
+  function makeStars() {
+    stars = Array.from({length:starCount}, () => ({x:Math.random()*width,y:Math.random()*height,r:Math.random()*1.2+.3,a:Math.random()*.55+.2,speed:Math.random()*6+2}));
+  }
+  function draw(delta) {
+    if (!ctx) return;
+    ctx.clearRect(0,0,width,height);
+    stars.forEach(star => {
+      star.y -= delta * star.speed;
+      if (star.y < -2) star.y = height + 2;
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(207,204,255,' + star.a + ')';
+      ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+      ctx.fill();
+    });
+  }
+  function tick(time) {
+    frame = 0;
+    if (paused || reduced.matches || document.hidden || !ctx) return;
+    const delta = lastTime ? Math.min((time-lastTime)/1000,.05) : 0;
+    lastTime = time;
+    draw(delta);
+    frame = requestAnimationFrame(tick);
+  }
+  function syncMotion() {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    lastTime = 0;
+    document.body.classList.toggle('paused',paused || reduced.matches);
+    $('pause').setAttribute('aria-pressed',String(paused || reduced.matches));
+    $('pause').disabled = reduced.matches;
+    $('pause').textContent = reduced.matches ? 'Tizimda harakat kamaytirilgan' : paused ? 'Harakatni davom ettirish' : 'Harakatni to‘xtatish';
+    draw(0);
+    if (!paused && !reduced.matches && !document.hidden && ctx) frame = requestAnimationFrame(tick);
+  }
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    if (ctx) {
+      const scale = Math.min(window.devicePixelRatio || 1,2);
+      canvas.width = Math.round(width*scale);
+      canvas.height = Math.round(height*scale);
+      ctx.setTransform(scale,0,0,scale,0,0);
+    }
+    makeStars();
+    draw(0);
+  }
+  function setDensity(value) {
+    if (!Number.isFinite(value)) return;
+    starCount = Math.max(20,Math.min(180,Math.round(value/10)*10));
+    $('density').value = String(starCount);
+    $('density-value').textContent = String(starCount);
+    makeStars();
+    draw(0);
+  }
+  $('density').addEventListener('input',event => setDensity(Number(event.target.value)));
+  $('pause').addEventListener('click', () => {
+    paused = !paused;
+    syncMotion();
+    $('status').textContent = paused ? 'Harakatlar to‘xtatildi.' : 'Kosmos yana harakatda.';
+  });
+  $('random').addEventListener('click', () => {
+    setPalette((selected+1+Math.floor(Math.random()*2))%palettes.length);
+    setDensity(20+Math.floor(Math.random()*17)*10);
+    $('status').textContent = palettes[selected].name + ' — ' + starCount + ' ta yulduz. Yangi olaming tayyor!';
+  });
+  window.addEventListener('resize',resize);
+  document.addEventListener('visibilitychange',syncMotion);
+  const onMotionChange = () => { paused = reduced.matches; syncMotion(); };
+  if (reduced.addEventListener) reduced.addEventListener('change',onMotionChange);
+  else if (reduced.addListener) reduced.addListener(onMotionChange);
+  resize();
+  syncMotion();
+})();
+</script>
+</body>
+</html>
