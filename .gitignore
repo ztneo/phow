@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Verification screenshots
+verify-purple-site*.png
+
+# Logs
+*.log
