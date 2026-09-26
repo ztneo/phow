@@ -7,7 +7,7 @@
  */
 import { chromium } from "playwright";
 
-const BASE = "http://localhost:3000";
+const BASE = process.env.VERIFY_BASE_URL || "http://localhost:3000";
 const failures = [];
 const passes = [];
 

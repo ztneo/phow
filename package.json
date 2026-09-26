@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port $PORT --strictPort",
     "typecheck": "tsc -b --noEmit",
-    "verify:visual": "bun verify-purple-site.mjs"
+    "verify:visual": "bun verify-with-server.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
